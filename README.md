@@ -1,2 +1,2 @@
-#3 Projects
+# Projects
 Projects that I do for classes and in my free time
