@@ -1,1 +1,7 @@
-# Proyecto de crear la página web de una protectora de animales
+# Proyecto de crear la página web de una protectora de animales.
+
+# El quiz de Java es un cuestionario:
+  - 2 tópicos diferentes
+  - 5 preguntas mínimo, 20 máximo
+  - Calculo de porcentaje
+  - Acceso a los resultados anteriores
