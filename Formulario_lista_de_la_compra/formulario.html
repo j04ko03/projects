@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de la Compra</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Lista de la Compra</legend>
+            
+            <label for="producto-input">Producto:</label>
+            <input type="text" id="producto-input" name="producto" placeholder="Nombre del producto" required>
+            
+            <label for="cantidad-input">Cantidad:</label>
+            <input type="number" id="cantidad-input" name="cantidad" min="1" placeholder="Cantidad" required>
+            
+            <label for="precio-input">Precio (€):</label>
+            <input type="number" id="precio-input" name="precio" min="0.01" step="0.01" placeholder="Precio por unidad" required>
+            
+            <button type="button" id="añadir-producto">Añadir a la lista</button>
+            
+            <fieldset>
+                <legend>Productos añadidos:</legend>
+                <ul id="lista-productos">
+                    <!-- Los productos añadidos se mostrarán aquí -->
+                </ul>
+            </fieldset>
+            
+            <label for="total-input">Total (€):</label>
+            <input type="text" id="total-input" name="total" readonly>
+            
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+    <script>
+        const productoInput = document.getElementById('producto-input');
+        const cantidadInput = document.getElementById('cantidad-input');
+        const precioInput = document.getElementById('precio-input');
+        const añadirProductoBtn = document.getElementById('añadir-producto');
+        const listaProductos = document.getElementById('lista-productos');
+        const totalInput = document.getElementById('total-input');
+
+        let total = 0;
+
+        añadirProductoBtn.addEventListener('click', () => {
+            const producto = productoInput.value.trim();
+            const cantidad = parseFloat(cantidadInput.value);
+            const precio = parseFloat(precioInput.value);
+
+            if (producto && cantidad > 0 && precio > 0) {
+                const subtotal = cantidad * precio;
+                total += subtotal;
+
+                const li = document.createElement('li');
+                li.textContent = `${producto} - Cantidad: ${cantidad}, Precio: ${precio.toFixed(2)}€, Subtotal: ${subtotal.toFixed(2)}€`;
+                listaProductos.appendChild(li);
+
+                totalInput.value = total.toFixed(2);
+
+                // Limpiar los campos
+                productoInput.value = '';
+                cantidadInput.value = '';
+                precioInput.value = '';
+            } else {
+                alert('Por favor, rellena todos los campos correctamente.');
+            }
+        });
+    </script>
+</body>
+</html>

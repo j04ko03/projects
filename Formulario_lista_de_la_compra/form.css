@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0000001a;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin: 5px 0;
+}
+#producto-input, #cantidad-input, #precio-input, #total-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); 
+}
+button:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+#lista-productos {
+    list-style-type: none;
+    padding: 0;
+}
+#lista-productos li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
